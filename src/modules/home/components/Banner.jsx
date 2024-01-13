@@ -3,11 +3,11 @@ import { getBannerAPI } from "../../../apis/movieAPI";
 import styles from "./Banner.module.css";
 import Play from "../../../components/Play/Play";
 
-// const trailers = [
-//   "youtube.com/video1",
-//   "youtube.com/video2",
-//   "youtube.com/video3",
-// ];
+const trailers = [
+  "youtube.com/video1",
+  "youtube.com/video2",
+  "youtube.com/video3",
+];
 
 export default function Banner() {
   const [banners, setBanners] = useState([]);
