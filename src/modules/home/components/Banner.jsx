@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
 import { getBannerAPI } from "../../../apis/movieAPI";
+import styles from "./Banner.module.css";
+import Play from "../../../components/Play/Play";
 
-const trailers = [
-  "youtube.com/video1",
-  "youtube.com/video2",
-  "youtube.com/video3",
-];
+// const trailers = [
+//   "youtube.com/video1",
+//   "youtube.com/video2",
+//   "youtube.com/video3",
+// ];
 
 export default function Banner() {
   const [banners, setBanners] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -19,7 +22,7 @@ export default function Banner() {
           return { ...banner, trailer: trailers[index] };
         });
 
-        console.log(banners);
+        // console.log(banners);
 
         setBanners(banners);
       } catch (error) {
@@ -32,21 +35,34 @@ export default function Banner() {
     getBanners();
   }, []);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length);
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, [currentIndex, banners]);
+
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
 
   return (
-    <div>
-      {banners.map((banner) => (
+    <div className={styles.bannerContainer}>
+      {banners.map((banner, index) => (
         <img
           key={banner.maBanner}
-          width={100}
-          height={100}
           src={banner.hinhAnh}
           alt="banner"
+          className={`${styles.banner} ${
+            index === currentIndex ? styles.active : ""
+          }`}
         />
       ))}
+      <div className={styles.playButton}>
+        {" "}
+        <Play />
+      </div>
     </div>
   );
 }

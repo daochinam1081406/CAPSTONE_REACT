@@ -1,0 +1,20 @@
+.bannerContainer {
+  position: relative;
+  overflow: hidden;
+  width: 99.5%;
+  height: 500px; /* Đặt chiều cao tối đa cho banner container */
+  border-radius: 2px;
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.2);
+  margin: 6px 4px;
+  align-items: center;
+}
+.banner {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: 1;
+}
+.banner.active {
+  display: block;
+}

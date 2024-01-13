@@ -1,0 +1,54 @@
+/* Header.module.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: rgb(44, 7, 7);
+  border-radius: 2px;
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.2);
+  height: 4rem;
+  margin: 6px 4px;
+  width: auto;
+}
+
+/* Logo Style */
+.logo {
+  flex: 1;
+  height: 3rem;
+  width: 3rem;
+  margin-left: 0.5rem;
+  /* Thêm các thuộc tính style khác cho logo */
+}
+
+/* Menu Style */
+.menu {
+  flex: 1;
+  text-align: center;
+}
+
+.menuItem {
+  display: inline-block;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Thêm hiệu ứng chuyển màu trong 0.3 giây với hiệu ứng ease */
+  cursor: pointer;
+}
+.menuItem:hover {
+  color: #ef2727; /* Màu nâu tối khi hover */
+}
+
+/* Login/Logout Style */
+.loginLogout {
+  flex: 1;
+  text-align: right;
+}
+.rightMenuIcon {
+  margin: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Thêm hiệu ứng chuyển màu trong 0.3 giây với hiệu ứng ease */
+}
+.rightMenuIcon:hover {
+  color: #ef2727;
+}

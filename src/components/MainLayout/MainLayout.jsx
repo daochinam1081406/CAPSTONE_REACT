@@ -5,9 +5,9 @@ import Header from "../Header";
 export default function MainLayout() {
   return (
     <div
-      style={{
-        minHeight: "100vh",
-      }}
+    // style={{
+    //   minHeight: "100vh",
+    // }}
     >
       <Header />
 
