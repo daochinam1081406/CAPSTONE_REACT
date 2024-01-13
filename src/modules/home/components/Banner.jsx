@@ -63,6 +63,7 @@ export default function Banner() {
         {" "}
         <Play />
       </div>
+      <></>
     </div>
   );
 }
